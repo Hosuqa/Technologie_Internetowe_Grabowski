@@ -1,0 +1,41 @@
+// Plik: prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  // Ścieżka do pliku bazy danych. Jest w pliku .env
+  url      = env("DATABASE_URL")
+}
+
+// --- Twój Model Danych ---
+
+model Member {
+  id    Int     @id @default(autoincrement())
+  name  String
+  email String  @unique // Ważne: to wymusi unikalność
+  loans Loan[]  // Relacja: jeden członek, wiele wypożyczeń
+}
+
+model Book {
+  id     Int    @id @default(autoincrement())
+  title  String
+  author String
+  copies Int    @default(1) // Domyślnie 1 kopia
+  loans  Loan[] // Relacja: jedna książka, wiele wypożyczeń
+}
+
+model Loan {
+  id         Int       @id @default(autoincrement())
+  loan_date  DateTime
+  due_date   DateTime
+  return_date DateTime? // Znak zapytania oznacza, że jest opcjonalne (NULL)
+
+  member    Member @relation(fields: [member_id], references: [id])
+  member_id Int    // Klucz obcy
+
+  book    Book   @relation(fields: [book_id], references: [id])
+  book_id Int    // Klucz obcy
+}

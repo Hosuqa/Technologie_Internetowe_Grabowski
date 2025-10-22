@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wypożyczalnia Książek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>System Wypożyczalni</h1>
+
+    <div class="forms-container">
+        <form id="form-add-member">
+            <h2>Dodaj czytelnika</h2>
+            <input type="text" id="member-name" placeholder="Imię i nazwisko" required>
+            <input type="email" id="member-email" placeholder="Email" required>
+            <button type="submit">Dodaj czytelnika</button>
+            <p id="member-msg" class="message"></p>
+        </form>
+
+        <form id="form-add-book">
+            <h2>Dodaj książkę</h2>
+            <input type="text" id="book-title" placeholder="Tytuł" required>
+            <input type="text" id="book-author" placeholder="Autor" required>
+            <input type="number" id="book-copies" placeholder="Liczba kopii" value="1" min="1">
+            <button type="submit">Dodaj książkę</button>
+            <p id="book-msg" class="message"></p>
+        </form>
+    </div>
+
+    <div class="list-container">
+        <h2>Lista książek</h2>
+        <div class="borrow-controls">
+            Wypożycz dla:
+            <select id="member-select-dropdown">
+                <option value="">-- Wybierz czytelnika --</option>
+            </select>
+        </div>
+        <table id="books-list">
+            <thead>
+                <tr>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                    <th>Dostępne</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <div class="list-container">
+        <h2>Aktywne wypożyczenia</h2>
+        <table id="loans-list">
+            <thead>
+                <tr>
+                    <th>Tytuł książki</th>
+                    <th>Czytelnik</th>
+                    <th>Data zwrotu</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
