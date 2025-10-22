@@ -8,6 +8,7 @@ Pobierz i zainstaluj Node.js (wersja LTS)
 - Odpal terminal
 - Przejdź do głównego folderu projektu Lab1
 - Wykonaj komendę *npm install* instalującą wszystkie potrzebne biblioteki.
+- Stwórz w folderze projektu plik *.env* i dodaj zmienną DATABASE_URL np. *DATABASE_URL="file:./dev.db*
 - Wygeneruj bazę danych komendą *npx prisma migrate dev*.
 - Uruchom serwer NodeJS komendą *npx nodemon index.js*
 - Otwórz folder projektu i uruchom plik *index.html* poprzez podwójne kliknięcie.
