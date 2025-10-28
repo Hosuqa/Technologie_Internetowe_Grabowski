@@ -59,7 +59,7 @@ async function loadBooks() {
                 <td>${book.author}</td>
                 <td>${book.available} / ${book.copies}</td>
                 <td>
-                    <button class="btn-borrow" data-book-id="${book.id}" ${!isAvailable ? 'disabled class="btn-disabled"' : ''}>
+                    <button class="btn-borrow" data-book-id="${book.id}">
                         ${isAvailable ? 'Wypożycz' : 'Brak'}
                     </button>
                 </td>
@@ -173,7 +173,6 @@ async function handleBookListClick(event) {
             });
             
             if (response.ok) {
-                alert('Wypożyczono książkę!');
                 loadBooks();
                 loadLoans();
             } else {
@@ -190,10 +189,6 @@ async function handleLoanListClick(event) {
     if (event.target.classList.contains('btn-return')) {
         const loanId = event.target.dataset.loanId;
         
-        if (!confirm('Czy na pewno chcesz zwrócić tę książkę?')) {
-            return;
-        }
-        
         try {
             const response = await fetch(`${API_URL}/loans/return`, {
                 method: 'POST',
@@ -202,7 +197,6 @@ async function handleLoanListClick(event) {
             });
             
             if (response.ok) {
-                alert('Zwrócono książkę!');
                 loadBooks();
                 loadLoans();
             } else {
