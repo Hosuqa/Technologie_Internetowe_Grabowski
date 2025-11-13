@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop API - Lab2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Shop API</h1>
+
+    <div class="forms-container">
+        <form id="form-add-product">
+            <h2>Dodaj nowy produkt</h2>
+            <input type="text" id="product-name" placeholder="Nazwa produktu" required>
+            <input type="number" id="product-price" placeholder="Cena" step="0.01" min="0" required>
+            <button type="submit">Dodaj produkt</button>
+            <p id="product-msg" class="message"></p>
+        </form>
+    </div>
+
+    <div class="list-container">
+        <h2>Lista produktów</h2>
+        <div class="cart-controls">
+            <label for="product-select-dropdown">Wybierz produkt:</label>
+            <select id="product-select-dropdown">
+                <option value="">-- Wybierz produkt --</option>
+            </select>
+            <input type="number" id="product-quantity" placeholder="Ilość" value="1" min="1">
+            <button id="add-to-cart-btn" onclick="addToCartFromSelect()">Dodaj do koszyka</button>
+        </div>
+        <table id="products-list">
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="list-container">
+        <h2>Koszyk</h2>
+        <table id="cart-list">
+            <thead>
+                <tr>
+                    <th>ID produktu</th>
+                    <th>Ilość</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="checkout-section">
+            <button id="checkout-btn" onclick="checkout()">Finalizuj zamówienie</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

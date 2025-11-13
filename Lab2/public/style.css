@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2d5f3f;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h2 {
+    color: #2d5f3f;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.forms-container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8ede8;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #d4e4d4;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background: #fafdfb;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #8bc99f;
+    background: white;
+}
+
+button {
+    background: #8bc99f;
+    color: #2d5f3f;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #73b88a;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.list-container {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8ede8;
+}
+
+.cart-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.cart-controls label {
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-controls select,
+.cart-controls input[type="number"] {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 0;
+}
+
+.cart-controls button {
+    flex-shrink: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background: #8bc99f;
+    color: #2d5f3f;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e8ede8;
+}
+
+th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:hover {
+    background-color: #f9fcfa;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 30px !important;
+}
+
+.product-qty,
+.cart-qty {
+    width: 80px;
+    padding: 8px;
+    border: 2px solid #d4e4d4;
+    border-radius: 5px;
+    text-align: center;
+    background: #fafdfb;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-add,
+.btn-update {
+    background: #6fb586;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-add:hover,
+.btn-update:hover {
+    background: #5ea475;
+}
+
+.btn-remove {
+    background: #d4a5a5;
+    color: #5f2d2d;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+    background: #c48f8f;
+}
+
+.checkout-section {
+    margin-top: 30px;
+    text-align: right;
+}
+
+#checkout-btn {
+    background: #6fb586;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+#checkout-btn:hover {
+    background: #5ea475;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.message.success {
+    background-color: #d8f0df;
+    color: #2d5f3f;
+    border: 1px solid #b8dcc4;
+}
+
+.message.error {
+    background-color: #f5e0e0;
+    color: #5f2d2d;
+    border: 1px solid #e8c8c8;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cart-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cart-controls select,
+    .cart-controls input[type="number"],
+    .cart-controls button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+}
