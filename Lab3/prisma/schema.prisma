@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./blog.db"
+}
+
+model Post {
+  id         Int       @id @default(autoincrement())
+  title      String
+  body       String
+  created_at DateTime  @default(now())
+  comments   Comment[]
+
+  @@map("posts")
+}
+
+model Comment {
+  id         Int      @id @default(autoincrement())
+  post_id    Int
+  author     String
+  body       String
+  created_at DateTime @default(now())
+  approved   Int      @default(0)
+  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+
+  @@map("comments")
+}

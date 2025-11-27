@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przepis - Szczegóły</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🍜 Azjatyckie Smaki</h1>
+            <div class="nav-links">
+                <a href="/">Strona główna</a>
+                <a href="/moderation.html">Moderacja</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="/" class="back-link">Powrót do listy przepisów</a>
+
+        <div id="post-detail" class="post-detail">
+            <div class="loading">Ładowanie przepisu...</div>
+        </div>
+
+        <div id="comments-section" class="comments-section">
+            <h3>Komentarze</h3>
+            
+            <div class="add-comment-form">
+                <h4>Dodaj komentarz</h4>
+                <form id="comment-form">
+                    <input type="text" id="comment-author" placeholder="Twoje imię" required>
+                    <textarea id="comment-body" placeholder="Treść komentarza" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Dodaj komentarz</button>
+                    <p id="comment-msg" class="message"></p>
+                </form>
+                <p class="info-text">Twój komentarz zostanie dodany po zatwierdzeniu przez moderatora.</p>
+            </div>
+
+            <div id="comments-list" class="comments-list">
+                <div class="loading">Ładowanie komentarzy...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="post.js"></script>
+</body>
+</html>
