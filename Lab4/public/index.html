@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmy i Oceny - Lab4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🎬 Filmy i Oceny</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h2>Ranking filmów</h2>
+            <div class="filter-section">
+                <label for="year-filter">Filtruj po roku:</label>
+                <select id="year-filter">
+                    <option value="">Wszystkie lata</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h3>Dodaj nowy film</h3>
+            <form id="add-movie-form">
+                <input type="text" id="movie-title" placeholder="Tytuł filmu" required>
+                <input type="number" id="movie-year" placeholder="Rok" min="1888" max="2100" required>
+                <button type="submit" class="btn btn-primary">Dodaj film</button>
+                <p id="movie-msg" class="message"></p>
+            </form>
+        </div>
+
+        <div id="movies-list" class="movies-list">
+            <div class="loading">Ładowanie filmów...</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
